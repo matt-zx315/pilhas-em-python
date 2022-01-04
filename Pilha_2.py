@@ -91,7 +91,7 @@ class Stack:
             return
         
         while aux:
-            print(aux.to_string() + '\n')
+            # print(aux.to_string() + '\n')
             stack_info += f'{aux.data} -> '
             
             aux = aux.nxt
@@ -100,12 +100,13 @@ class Stack:
         print(stack_info)
 
 
-kstacks = Stack(10)
+kstacks = Stack(10)  # Instanciando a pilha de pilhas
 
-kstacks.push(Stack(10))
+kstacks.push(Stack(10))  # Inserindo uma pilha
 kstacks.find_stack(0).data.push(65)
 print(kstacks.find_stack(0).data.peek()) # Eu sei... Isso é FEIO PRA CARALHO!
 
+# Para acessar uma pilha dentro de kstacks, é preciso acessar o atributo data (usar get e set)
 kstacks.find_stack(0).data.push(71)
 print(kstacks.find_stack(0).data.peek())
 
@@ -113,3 +114,5 @@ kstacks.push(Stack(10))
 kstacks.find_stack(1).data.push(26)
 print(kstacks.find_stack(0).data.peek())
 print(kstacks.find_stack(1).data.peek())
+kstacks.find_stack(0).data.display()
+kstacks.find_stack(1).data.display()
